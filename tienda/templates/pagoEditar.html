@@ -1,0 +1,26 @@
+{% extends 'plantilla.html' %}
+
+{% block content %}
+
+    <h2 class="text-center">Pagos</h2>
+
+    <form class="w-50 shadow mx-auto p-4 m-3" method="post" action="{% url 'editar_pagos' %}">
+        {% csrf_token %}
+
+        <input type="hidden" name="id" value="{{ pagos.id }}">
+        Monto: <input type="text" name="monto" class="form-control my-2" required value="{{ pagos.monto }}">
+
+        Fecha de pago: <input type="date" name="fecha_pago" class="form-control my-2" required value="{{ pagos.fecha_pago }}">
+
+        Metodo de pago: <input type="text" name="metodo_pago" class="form-control my-2" required value="{{ pagos.metodo_pago }}">
+
+        Descripción:
+        <textarea class="form-control my-2" name="descripcion"  >
+            {{ pagos.descripcion }}
+        </textarea>
+        
+        <input type="submit" value="Actualizar" class="btn btn-warning">
+
+    </form>
+
+{% endblock %}

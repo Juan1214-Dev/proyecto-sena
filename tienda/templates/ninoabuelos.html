@@ -1,0 +1,67 @@
+{% extends 'plantilla.html' %}
+
+{% block content  %}
+
+{% if messages %}
+
+        {% for message in messages %}
+        <div class="alert alert-success">{{ message }}</div> 
+        {% endfor %} 
+    {% endif %}
+    
+    <h2 class="text-center">Niños/Abuelos</h2>
+
+    <form class="w-50 shadow mx-auto p-4 m-3" method="post" action="{% url 'guardar_ninoabuelos' %}">
+        {% csrf_token %}
+
+        Nombre: <input type="text" name="nombre" class="form-control my-2" required>
+
+        Fecha de nacimiento: <input type="date" name="fecha_nacimiento" class="form-control my-2" required>
+
+        Número de indentificación: <input type="text" name="numero_identificacion" class="form-control my-2" required>
+
+        Descripción:
+        <textarea class="form-control my-2" name="descripcion"  >
+
+        </textarea>
+        
+        <input type="submit" value="Guardar" class="btn btn-primary">
+
+    </form>
+
+    <table class="table table-light w-75 mx-auto text-center">
+
+        <tr class="table-dark">
+            <th>Nombre</th>
+            <th>Fecha de nacimiento</th>
+            <th>Número de indentificación</th>
+            <th>Descripción</th>
+            <th colspan="2"></th>
+        </tr>
+    {% for ninoabuelos in ninoabuelos %}    
+        <tr>
+            <td>{{ ninoabuelos.nombre }}</td>
+            <td>{{ ninoabuelos.fecha_nacimiento }}</td>
+            <td>{{ ninoabuelos.numero_identificacion }}</td>
+            <td>{{ ninoabuelos.descripcion }}</td>
+
+            <td>
+                <form action="{% url 'eliminar_ninoabuelos' ninoabuelos.id %}" method="post">
+                    {% csrf_token %}
+                    <button class="btn btn-danger "onclick="return confirm('¿Deseas eliminar este usuario?')">
+                        <i class="fa fa-trash"></i>
+                    </button>
+                </form>
+            </td>
+            <td>
+                <form action="{% url 'detalle_ninoabuelos' ninoabuelos.id %}" method="post">
+                    {% csrf_token %}
+                    <button class="btn btn-warning">
+                        <i class="fa fa-edit"></i>
+                    </button>
+                </form>
+            </td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}

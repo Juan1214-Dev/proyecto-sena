@@ -1,0 +1,218 @@
+
+
+/* Buscandor de la NavBar */
+
+nav {
+    background-color: transparent !important;
+}
+
+/* Buscador de la NavBar */
+
+
+/* Botón Iniciar Sesión */
+
+#IniciarSesion {
+    position: relative;
+    right: 25px;
+    width: 125px;
+    height: 35px;
+    font-size: 15px;
+}
+
+/* Botón Registrarse */
+
+#Registrarse {
+    position: relative;
+    right: 15px;
+    width: 125px;
+    height: 35px;
+    font-size: 15px;
+}
+
+/* Estilos para Jumbotrón */
+
+#Jumbotron {
+    background-image: url(../img/Banner.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 640px;
+    color: #fff;
+
+}
+
+/* Estilos para botón Servicios - Jumbotrón */
+
+#ServiciosBanner {
+    position: relative;
+    top: 100px;
+    right: 40px;
+    left: 40px;
+    width: 400px;
+    font-size: 30px;
+    font-weight: 300px;
+}
+
+/* Estilos para H1 - Jumbotrón */
+
+#Jumbotron h1 {
+    position: relative;
+    top: 25px;
+    margin-left: 40px;
+    font-weight: 700;
+    font-size: 70px;
+    padding: 3px;
+    /* Añade espaciado interno si lo deseas */
+    border-radius: 10px;
+    
+}
+
+/* Estilos para P - Jumbotrón */
+
+#Jumbotron p {
+    position: relative;
+    font-size: 30px;
+    top: 30px;
+    margin-left: 40px;
+    padding: 1px;
+    /* Añade espaciado interno si lo deseas */
+    border-radius: 10px;
+
+}
+
+/* Estilos para Acordeón */
+
+#Acordeon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Estilos para Acordeón */
+
+#Acordeon li {
+    margin-top: 10px;
+}
+
+/* Estilos para Cartas Niñeras */
+
+#Cartas {
+    width: 350px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Estilos para Cartas Niñeras II */
+
+#CartasBackground {
+    background-image: url(../img/BannerCartas1.jpg);
+    background-size: cover;
+}
+
+/* Estilos para botones de next de Carrousel */
+
+.carousel-control-next-icon {
+    color: black;
+}
+
+/* Estilos para formulario 1 */
+
+#Contacto {
+    background-image: url(../img/BannerContacto2.jpg);
+    background-size: cover;
+}
+
+/* Estilos para H1 de formulario */
+
+#Contacto h1 {
+    position: relative;
+    top: 30px;
+    font-size: 70px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilos para formulario 2 */
+
+.Contacto2 {
+    position: relative;
+    margin-left: 660px;
+    bottom: 45px;
+    color: #000000;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+    width: 400px;
+}
+
+/* Estilos para botón de enviar Formulario */
+
+#EnviarFormulario {
+    position: relative;
+    margin-left: 200px;
+    width: 200px;
+    margin-top: 5px;
+}
+
+
+/* Fondo para las interfaces */
+
+.Interfaz {
+    background-image: url(../img/Abstract.jpg);
+}
+
+/* Configuraciones para toda la división de Nanny Profile */
+
+.nanny-profile {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 20px;
+    border-radius: 45px;
+    box-shadow: 0px 0px 500px rgba(0, 0, 0, 1);
+}
+
+/* Configuraciones para toda la IMG de perfil de Nanny */
+
+.profile-picture {
+    font-family: 'Montserrat', sans-serif;
+    max-width: 200px;
+    height: auto;
+    border-radius: 45%;
+    font-weight: 300;
+    box-shadow: 0px 0px 500px rgba(0, 0, 0, 1);
+}
+
+/* Configuraciones para toda la división de User Profile */
+
+.user-profile {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 20px;
+    border-radius: 45px;
+    box-shadow: 0px 0px 500px rgba(0, 0, 0, 1);
+}
+
+/* Configuraciones para toda la división de Edit Profile */
+
+.edit-profile {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    background-color: #fff;
+    color: #000000;
+    padding: 20px;
+    border-radius: 45px;
+    box-shadow: 0px 0px 500px rgba(0, 0, 0, 1);
+}
+
+#backback {
+    position: absolute;
+    width: 40px;
+    left: 420px;
+    top: 75px;
+}
+

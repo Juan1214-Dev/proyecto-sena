@@ -1,0 +1,34 @@
+{% extends 'plantilla.html' %}
+
+{% block content  %}
+
+    <h2 class="text-center">Usuarios</h2>
+
+    <form class="w-50 shadow mx-auto p-4 m-3" method="post" action="{% url 'editar_usuario' %}">
+        {% csrf_token %}
+
+        <input type="hidden" name="id" value="{{ usuarios.id }}">
+
+        Nombre: <input type="text" name="nombre" class="form-control my-2" required value="{{ usuarios.nombre }}">
+
+        Apellido: <input type="text" name="apellido" class="form-control my-2" required value="{{ usuarios.apellido }}">
+
+        Nick: <input type="text" name="nick" class="form-control my-2" required value="{{ usuarios.nick }}">
+
+        Correo: <input type="text" name="correo" class="form-control my-2" required value="{{ usuarios.correo }}">
+
+        Contraseña: <input type="text" name="password" class="form-control my-2" required value="{{ usuarios.password }}">
+        
+        Rol: <input type="text" name="rol" class="form-control my-2" required value="{{ usuarios.rol }}">
+
+
+        Descripción: <textarea class="form-control my-2" name="descripcion">
+            {{ usuarios.descripcion }}
+        </textarea>
+        
+        <input type="submit" value="Actualizar" class="btn btn-warning">
+
+    </form>
+
+   
+{% endblock %}

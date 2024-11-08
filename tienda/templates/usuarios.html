@@ -1,0 +1,87 @@
+{% extends 'plantilla.html' %}
+
+{% block content  %}
+
+{% if messages %}
+
+        {% for message in messages %}
+        <div class="alert alert-success">{{ message }}</div> 
+        {% endfor %} 
+    {% endif %}
+    
+    <h2 class="text-center">Usuarios</h2>
+
+    <form class="w-50 shadow mx-auto p-4 m-3" method="post" action="{% url 'guardar_usuario' %}">
+        {% csrf_token %}
+
+        Nombre: <input type="text" name="nombre" class="form-control my-2" required>
+
+        Apellido: <input type="text" name="apellido" class="form-control my-2" required>
+
+        Nick: <input type="text" name="nick" class="form-control my-2" required>
+
+        Correo: <input type="text" name="correo" class="form-control my-2" required>
+
+        Contraseña: <input type="text" name="password" class="form-control my-2" required>
+
+        Rol: <input type="text" name="rol" class="form-control my-2" required>
+
+        Descripción:
+        <textarea class="form-control my-2" name="descripcion"  >
+
+        </textarea>
+        
+        <input type="submit" value="Guardar" class="btn btn-primary">
+
+    </form>
+
+    <table class="table table-light w-75 mx-auto text-center">
+
+        <tr class="table-dark">
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Nick</th>
+            <th>Correo</th>
+            <th>Contraseña</th>
+            <th>Rol</th>
+            <th>Descripción</th>
+            <th colspan="2"></th>
+        </tr>
+    {% for usuarios in usuarios %}    
+        <tr>
+            <td>{{ usuarios.nombre }}</td>
+            <td>{{ usuarios.apellido }}</td>
+            <td>{{ usuarios.nick }}</td>
+            <td>{{ usuarios.correo }}</td>
+            <td>{{ usuarios.password }}</td>
+            <td>{{ usuarios.rol }}</td>
+            <td>{{ usuarios.descripcion }}</td>
+
+            <td>
+                <form action="{% url 'eliminar_usuario' usuarios.id %}" method="post">
+                    {% csrf_token %}
+                    <button class="btn btn-danger "onclick="return confirm('¿Deseas eliminar este usuario?')">
+                        <i class="fa fa-trash"></i>
+                    </button>
+                </form>
+            </td>
+            <td>
+                <form action="{% url 'detalle_usuario' usuarios.id %}" method="post">
+                    {% csrf_token %}
+                    <button class="btn btn-warning">
+                        <i class="fa fa-edit"></i>
+                    </button>
+                </form>
+            </td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}
+    
+
+
+
+
+
+
+
